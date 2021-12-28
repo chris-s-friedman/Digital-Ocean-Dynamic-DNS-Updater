@@ -248,7 +248,8 @@ def config_logging():
     logging.basicConfig(
         format="{}: %(asctime)sZ %(levelname)s %(message)s".format(
             script_name()
-        )
+        ),
+        filename=f'{os.environ.get("HOME")}/.ddns-updater.log',
     )
     logging.Formatter.converter = time.gmtime
 
